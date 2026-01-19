@@ -228,13 +228,16 @@
             z-index: -1;
         }
 
-        .option-btn:hover {
-            border-color: var(--green);
-            color: var(--green);
-        }
+        /* 데스크탑만 hover 적용 */
+        @media (hover: hover) and (pointer: fine) {
+            .option-btn:hover {
+                border-color: var(--green);
+                color: var(--green);
+            }
 
-        .option-btn:hover::before {
-            width: 4px;
+            .option-btn:hover::before {
+                width: 4px;
+            }
         }
 
         .option-btn:active {
@@ -244,6 +247,8 @@
 
         .option-btn:focus {
             outline: none;
+            border-color: var(--gray);
+            color: var(--white);
         }
 
         /* Loading Screen */
