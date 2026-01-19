@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>알고보니 내가 빌런? | 회사 빌런 테스트</title>
+    <title>우리 회사는 빌런 없어 | 회사생활 테스트</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -38,7 +38,6 @@
             position: relative;
         }
 
-        /* Intro Screen */
         .screen {
             display: none;
             min-height: 100vh;
@@ -51,7 +50,7 @@
             flex-direction: column;
         }
 
-        /* Intro */
+        /* Intro Screen */
         .intro-screen {
             justify-content: center;
             align-items: center;
@@ -97,19 +96,23 @@
         }
 
         .intro-title {
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 52px;
-            line-height: 1.1;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1.3;
             margin-bottom: 16px;
             position: relative;
             z-index: 1;
             animation: fadeInUp 0.8s ease 0.2s both;
+            letter-spacing: -1px;
         }
 
         .intro-title .highlight {
             color: var(--green);
             display: block;
-            font-size: 72px;
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: -2px;
         }
 
         @keyframes fadeInUp {
@@ -154,67 +157,6 @@
             transform: scale(0.98);
         }
 
-        /* MBTI Selection Screen */
-        .mbti-screen {
-            background: var(--black);
-            justify-content: flex-start;
-            padding-top: 60px;
-        }
-
-        .mbti-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .mbti-step {
-            color: var(--green);
-            font-size: 12px;
-            letter-spacing: 4px;
-            margin-bottom: 16px;
-        }
-
-        .mbti-title {
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 32px;
-        }
-
-        .mbti-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .mbti-btn {
-            background: transparent;
-            border: 1px solid var(--gray);
-            color: var(--white);
-            padding: 16px 8px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: 1px;
-        }
-
-        .mbti-btn:hover {
-            border-color: var(--green);
-            color: var(--green);
-        }
-
-        .mbti-btn.selected {
-            background: var(--green);
-            border-color: var(--green);
-            color: var(--black);
-        }
-
-        .mbti-note {
-            text-align: center;
-            color: var(--gray-light);
-            font-size: 13px;
-            margin-top: 24px;
-        }
-
         /* Question Screen */
         .question-screen {
             background: var(--black);
@@ -226,7 +168,7 @@
             width: 100%;
             height: 3px;
             background: var(--gray);
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -240,35 +182,38 @@
             color: var(--green);
             font-size: 13px;
             letter-spacing: 3px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .question-text {
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 28px;
-            line-height: 1.4;
-            margin-bottom: 48px;
-            min-height: 120px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
         }
 
         .options {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .option-btn {
             background: transparent;
             border: 1px solid var(--gray);
             color: var(--white);
-            padding: 24px;
-            font-size: 15px;
+            padding: 18px 16px;
+            font-size: 13px;
+            font-weight: 400;
             text-align: left;
             cursor: pointer;
             transition: all 0.2s ease;
-            line-height: 1.5;
+            line-height: 1.7;
             position: relative;
             overflow: hidden;
+            letter-spacing: -0.3px;
         }
 
         .option-btn::before {
@@ -343,9 +288,9 @@
 
         .result-label {
             color: var(--green);
-            font-size: 12px;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
         }
 
         .result-mbti {
@@ -408,10 +353,12 @@
         }
 
         .villain-type {
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 28px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
             margin-bottom: 16px;
             line-height: 1.3;
+            letter-spacing: -0.5px;
         }
 
         .villain-desc {
@@ -553,7 +500,6 @@
             border-color: var(--white);
         }
 
-        /* Animations */
         .fade-in {
             animation: fadeIn 0.5s ease;
         }
@@ -577,44 +523,17 @@
     <div class="container">
         <!-- Intro Screen -->
         <div class="screen intro-screen active" id="intro">
-            <span class="intro-badge">MBTI × OFFICE × VILLAIN</span>
+            <span class="intro-badge">OFFICE LIFE TEST</span>
             <h1 class="intro-title">
-                알고보니
-                <span class="highlight">내가 빌런?</span>
+                우리 회사는
+                <span class="highlight">빌런 없어</span>
             </h1>
             <p class="intro-subtitle">
-                회사에서 <span>나만 힘든 줄</span> 알았는데<br>
-                ㄹㅇ 빌런은 따로 있었음 ㅋㅋ<br>
-                <span>근데 그게 나일 수도?</span>
+                우리 팀은 <span>다 좋은 사람들</span>이야<br>
+                진짜 빌런 같은 사람 없음 ㅋㅋ<br>
+                <span>...맞지?</span>
             </p>
-            <button class="start-btn" onclick="showMbtiScreen()">테스트 시작 →</button>
-        </div>
-
-        <!-- MBTI Selection Screen -->
-        <div class="screen mbti-screen" id="mbti">
-            <div class="mbti-header">
-                <p class="mbti-step">STEP 01</p>
-                <h2 class="mbti-title">당신의 MBTI는?</h2>
-            </div>
-            <div class="mbti-grid">
-                <button class="mbti-btn" onclick="selectMbti(this)">ISTJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ISFJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">INFJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">INTJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ISTP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ISFP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">INFP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">INTP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ESTP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ESFP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ENFP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ENTP</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ESTJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ESFJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ENFJ</button>
-                <button class="mbti-btn" onclick="selectMbti(this)">ENTJ</button>
-            </div>
-            <p class="mbti-note">MBTI 모르면 대충 찍어도 됨 ㅋ</p>
+            <button class="start-btn" onclick="startQuestions()">테스트 시작 →</button>
         </div>
 
         <!-- Question Screen -->
@@ -630,13 +549,13 @@
         <!-- Loading Screen -->
         <div class="screen loading-screen" id="loading">
             <div class="loading-icon"></div>
-            <p class="loading-text">당신의 <span>빌런 지수</span> 분석 중...</p>
+            <p class="loading-text">우리 회사 <span>진짜 빌런</span> 찾는 중...</p>
         </div>
 
         <!-- Result Screen -->
         <div class="screen result-screen" id="result">
             <div class="result-header">
-                <p class="result-label">YOUR VILLAIN TYPE</p>
+                <p class="result-label">ㅋㅋ 빌런 없다며?</p>
                 <h1 class="result-mbti" id="resultMbti"></h1>
             </div>
             <div class="villain-card">
@@ -678,99 +597,334 @@
     </div>
 
     <script>
-        let selectedMbti = '';
         let currentQuestion = 0;
+        let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
         let villainScore = 0;
 
+        // 12문항: E/I 3개, S/N 3개, T/F 3개, J/P 3개 - 4지선다
         const questions = [
+            // E/I 질문 1
             {
-                text: "월요일 아침, 팀장이 긴급 회의를 소집함. 당신의 반응은?",
+                text: "월요일 아침, 팀 전체 긴급 회의가 잡혔다. 회의실 가는 길에 당신은?",
+                type: "EI",
                 options: [
-                    { text: "ㅋㅋ 또 뭔 일이래 (속으로 한숨)", score: 1 },
-                    { text: "회의록 미리 준비해감 (프로)", score: 2 },
-                    { text: "늦게 들어가서 존재감 어필", score: 3 },
-                    { text: "회의 중 딴짓하다 걸림 ㅋ", score: 4 }
+                    { 
+                        text: "옆자리 동료한테 \"야 뭔 일이래?\" 하면서 같이 걸어감. 가는 길에 다른 팀 사람들한테도 인사하면서 정보 수집", 
+                        value: "E", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "일단 단톡방에 \"회의 왜 하는 거임?\" 올려서 누가 답해주길 기다림. 직접 물어보긴 귀찮아", 
+                        value: "E", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "혼자 노트북이랑 필기구 챙겨서 조용히 감. 회의 시작 전에 미리 자리 잡고 슬랙 확인하면서 대기", 
+                        value: "I", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "최대한 늦게 들어가서 구석자리 앉음. 존재감 최소화하고 빨리 끝나길 기도함", 
+                        value: "I", 
+                        villain: 2 
+                    }
                 ]
             },
+            // E/I 질문 2
             {
-                text: "동료가 니 아이디어를 자기 거라고 발표함. 어떻게 함?",
+                text: "점심시간, 오늘따라 특별히 할 일이 없다. 당신의 선택은?",
+                type: "EI",
                 options: [
-                    { text: "참는다... 일단 참아...", score: 1 },
-                    { text: "나중에 따로 얘기함", score: 2 },
-                    { text: "회의 중에 \"그거 제 아이디어인데요?\" 박음", score: 4 },
-                    { text: "그 동료 뒷담 존나 깜 ㅋ", score: 3 }
+                    { 
+                        text: "단톡방에 \"점심 뭐 먹지? 새로 생긴 맛집 가볼 사람~\" 올리고, 평소 안 친한 부서 사람도 슬쩍 꼬심", 
+                        value: "E", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "옆자리 동료 붙잡고 \"야 오늘 점심 뭐 먹을래? 내가 살게\" 하면서 자연스럽게 수다 타임 만듦", 
+                        value: "E", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "이어폰 끼고 혼밥하면서 유튜브 봄. 회사 근처 조용한 카페에서 잠깐 멍 때리는 것도 좋고", 
+                        value: "I", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "점심 약속 있냐는 물음에 \"아 오늘 좀 바빠서...\" 하고 피함. 사실 안 바쁜데 혼자 쉬고 싶음", 
+                        value: "I", 
+                        villain: 3 
+                    }
                 ]
             },
+            // E/I 질문 3
             {
-                text: "점심 메뉴 정할 때 당신은?",
+                text: "회식 자리, 분위기가 좀 어색하게 가라앉았다. 이때 당신은?",
+                type: "EI",
                 options: [
-                    { text: "아무거나~ 다 좋아요~", score: 1 },
-                    { text: "의견 내고 투표하자고 함", score: 2 },
-                    { text: "내가 정함. 이의 없지?", score: 4 },
-                    { text: "맨날 같은 거 먹자고 우김", score: 3 }
+                    { 
+                        text: "\"자 우리 게임 하나 하자!\" 하면서 분위기 띄움. 훈민정음이든 뭐든 일단 뭐라도 시작해야 직성이 풀림", 
+                        value: "E", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "팀장님한테 \"요즘 어떠세요~\" 하면서 말 걸고, 자연스럽게 다른 사람들도 대화에 끌어들임", 
+                        value: "E", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "옆 사람이랑 조용히 1:1로 얘기하거나, 적당히 웃어주면서 분위기 맞춰줌. 굳이 나서진 않음", 
+                        value: "I", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "폰 보면서 버팀. 적당한 타이밍에 \"저 내일 일찍 일어나야 해서...\" 하고 먼저 빠짐", 
+                        value: "I", 
+                        villain: 3 
+                    }
                 ]
             },
+            // S/N 질문 1
             {
-                text: "야근하는데 동료가 칼퇴함. 기분이?",
+                text: "새 프로젝트 킥오프 미팅. 팀장이 \"자유롭게 아이디어 내봐\"라고 했다.",
+                type: "SN",
                 options: [
-                    { text: "부럽다... 나도 가고 싶다...", score: 1 },
-                    { text: "각자 사정 있는 거지 뭐", score: 2 },
-                    { text: "내일 그 얘기 슬쩍 꺼냄", score: 3 },
-                    { text: "팀장한테 보고함 ㅋ", score: 4 }
+                    { 
+                        text: "비슷한 과거 프로젝트 레퍼런스 찾아보고, 현실적인 방안 위주로 제안함. \"저번에 A사가 이렇게 해서 성공했는데요\"", 
+                        value: "S", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "일단 예산이랑 일정부터 확인함. 그거 알아야 가능한 범위 내에서 아이디어 낼 거 아님", 
+                        value: "S", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "\"완전 새로운 방식으로 해보면 어떨까요?\" 검증 안 된 거여도 일단 던져봄. 가능성 보이면 디테일은 나중에", 
+                        value: "N", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "\"이 프로젝트가 성공하면 회사 전체가 바뀔 수 있어요\" 큰 그림부터 그리고, 구체적인 건 나중에 생각함", 
+                        value: "N", 
+                        villain: 3 
+                    }
                 ]
             },
+            // S/N 질문 2
             {
-                text: "신입이 실수했을 때 당신의 반응은?",
+                text: "후배가 보고서를 가져왔는데, 전체적인 방향은 좋은데 숫자 오류가 몇 개 있다.",
+                type: "SN",
                 options: [
-                    { text: "괜찮아~ 나도 처음엔 그랬어", score: 1 },
-                    { text: "실수한 부분 체크해서 알려줌", score: 2 },
-                    { text: "한숨 쉬면서 내가 다시 함", score: 3 },
-                    { text: "다른 사람들 앞에서 지적함", score: 4 }
+                    { 
+                        text: "숫자 오류부터 꼼꼼히 체크해서 수정해줌. 디테일이 틀리면 전체 신뢰도가 떨어지니까 기본기가 중요함", 
+                        value: "S", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "빨간펜으로 틀린 부분 다 체크해서 돌려줌. \"여기 다 고쳐와\" 정확한 게 중요하지, 대충 넘어가면 안 됨", 
+                        value: "S", 
+                        villain: 4 
+                    },
+                    { 
+                        text: "큰 그림이 좋으니까 일단 칭찬해주고, 숫자는 \"여기 다시 확인해봐\" 정도로 넘김. 방향성이 맞으면 OK", 
+                        value: "N", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"이 보고서로 뭘 말하고 싶은 거야?\" 숫자보다 스토리라인이 더 중요하다고 생각함", 
+                        value: "N", 
+                        villain: 2 
+                    }
                 ]
             },
+            // S/N 질문 3
             {
-                text: "팀 회식 자리에서 당신은?",
+                text: "팀 내 업무 프로세스가 비효율적인 것 같아서 개선이 필요하다.",
+                type: "SN",
                 options: [
-                    { text: "조용히 먹고 눈치보다 감", score: 1 },
-                    { text: "적당히 분위기 맞춰줌", score: 2 },
-                    { text: "술게임 주도하면서 텐션 올림", score: 3 },
-                    { text: "회사 험담 타임 시작~", score: 4 }
+                    { 
+                        text: "현재 프로세스에서 구체적으로 어떤 부분이 시간 낭비인지 체크리스트로 만들어서 바로 적용 가능한 개선안 제시", 
+                        value: "S", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "다른 회사들은 어떻게 하나 벤치마킹부터 함. 검증된 방법 가져오는 게 확실하지", 
+                        value: "S", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "아예 프로세스 전체를 새로 설계해보자고 제안함. 근본적인 구조를 바꿔야 진짜 효율이 나옴", 
+                        value: "N", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "\"이 프로세스가 왜 생겼는지부터 생각해봐야 하지 않을까요?\" 본질적인 질문 던짐", 
+                        value: "N", 
+                        villain: 2 
+                    }
                 ]
             },
+            // T/F 질문 1
             {
-                text: "재택근무 할 때 당신은?",
+                text: "같이 일하는 동료가 요즘 성과가 안 좋아서 팀장한테 혼났다. 점심시간에 둘이 밥 먹는데...",
+                type: "TF",
                 options: [
-                    { text: "오히려 더 열심히 일함", score: 1 },
-                    { text: "할 거 하고 쉴 때 쉼", score: 2 },
-                    { text: "메신저만 켜놓고 딴짓", score: 3 },
-                    { text: "카메라 끄고 게임함 ㅋ", score: 4 }
+                    { 
+                        text: "\"솔직히 이번 건 네 실수 맞긴 한데, 다음엔 이렇게 해봐\" 구체적인 개선 방법 알려줌. 위로보단 해결책이 필요함", 
+                        value: "T", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "\"왜 그렇게 됐는지 같이 분석해볼까?\" 원인 파악부터 하자고 함. 감정적으로 접근하면 또 반복됨", 
+                        value: "T", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "\"에이 팀장님도 너무했다 ㅠㅠ 요즘 컨디션 안 좋았잖아\" 일단 편 들어주고 기 살려줌. 조언은 나중에", 
+                        value: "F", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"맛있는 거 먹자, 내가 쏠게\" 일단 기분 풀어주는 게 먼저. 힘들 때 잔소리 들으면 더 힘듦", 
+                        value: "F", 
+                        villain: 1 
+                    }
                 ]
             },
+            // T/F 질문 2
             {
-                text: "회의 시간에 의견 충돌이 생기면?",
+                text: "프로젝트 마감이 코앞인데, 팀원 한 명이 개인 사정으로 휴가를 써야 할 것 같다고 한다.",
+                type: "TF",
                 options: [
-                    { text: "일단 듣고 중재해봄", score: 1 },
-                    { text: "내 의견 논리적으로 어필", score: 2 },
-                    { text: "목소리 커지면서 우김", score: 4 },
-                    { text: "\"나중에 얘기하죠\" 하고 끝냄", score: 3 }
+                    { 
+                        text: "\"지금 타이밍이 좀... 최소한 이것만 끝내고 가면 안 될까?\" 현실적으로 마감 맞추려면 어쩔 수 없음", 
+                        value: "T", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "\"휴가는 OK, 대신 이 부분만 인수인계 해줘\" 일정 조율해서 둘 다 해결되게 함", 
+                        value: "T", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"무슨 일이야? 괜찮아?\" 일단 사정부터 들어봄. 진짜 급한 일이면 우리가 좀 더 뛰면 되지", 
+                        value: "F", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"당연히 가야지, 걱정 마\" 바로 OK 해줌. 개인 사정이 더 중요하지, 일은 어떻게든 됨", 
+                        value: "F", 
+                        villain: 2 
+                    }
                 ]
             },
+            // T/F 질문 3
             {
-                text: "상사가 불합리한 요청을 하면?",
+                text: "신입이 제안한 아이디어가 솔직히 현실성이 좀 떨어진다. 회의에서 당신은?",
+                type: "TF",
                 options: [
-                    { text: "일단 \"네\" 하고 받아들임", score: 1 },
-                    { text: "조심스럽게 의견 제시", score: 2 },
-                    { text: "대놓고 \"이건 좀...\" 함", score: 3 },
-                    { text: "하는 척하고 안 함", score: 4 }
+                    { 
+                        text: "\"그 방식은 예산이랑 시간 고려하면 어려울 것 같은데, 차라리 이렇게 수정하면 어때요?\" 바로 피드백 줌", 
+                        value: "T", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "\"그건 안 돼요\" 솔직하게 말함. 일찍 방향 잡아줘야 나중에 시간 낭비 안 함", 
+                        value: "T", 
+                        villain: 4 
+                    },
+                    { 
+                        text: "일단 회의에선 \"오 재밌는 생각이네요\" 하고, 나중에 따로 불러서 조심스럽게 얘기함", 
+                        value: "F", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"좋은 시도예요! 여기에 이런 걸 더하면 어떨까요?\" 아이디어를 살리는 방향으로 보완해줌", 
+                        value: "F", 
+                        villain: 1 
+                    }
                 ]
             },
+            // J/P 질문 1
             {
-                text: "퇴사하는 동료한테 당신은?",
+                text: "다음 주에 중요한 발표가 있다. 오늘은 금요일 오후, 당신의 상태는?",
+                type: "JP",
                 options: [
-                    { text: "진심으로 응원해줌", score: 1 },
-                    { text: "연락처 교환하고 끝", score: 2 },
-                    { text: "\"나도 데려가 ㅋㅋ\"", score: 3 },
-                    { text: "속으로 'ㅋ 후회할걸'", score: 4 }
+                    { 
+                        text: "이미 PPT 초안은 다 만들어놨고, 주말에 최종 점검만 하면 됨. 발표 대본도 머릿속에 정리된 상태", 
+                        value: "J", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "PPT 완성하고 리허설까지 해봄. 혹시 모르니까 백업 자료도 준비해둠. 완벽해야 마음이 편함", 
+                        value: "J", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "큰 틀만 잡아놨고, 디테일은 주말에 몰아서 할 예정. 마감 임박해야 집중 잘 되는 타입이라 일단 퇴근 ㅋ", 
+                        value: "P", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "아직 시작도 안 함 ㅋㅋ 일요일 밤에 하면 되지 뭐. 벼락치기가 효율 좋음", 
+                        value: "P", 
+                        villain: 3 
+                    }
+                ]
+            },
+            // J/P 질문 2
+            {
+                text: "팀 프로젝트 일정을 짜야 한다. 당신의 스타일은?",
+                type: "JP",
+                options: [
+                    { 
+                        text: "날짜별로 세부 태스크 쪼개서 간트차트 만들고, 매일 진척도 체크하는 시스템 구축. 계획대로 안 가면 불안함", 
+                        value: "J", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "일정표 만들고 팀원들한테 공유함. \"이거 지켜주세요\" 하고 매일 리마인드 보냄", 
+                        value: "J", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "큰 마일스톤만 정해놓고, 세부 일정은 상황 봐가면서 유연하게 조절. 너무 빡빡하면 오히려 비효율", 
+                        value: "P", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"일정은 대충 이 정도?\" 하고 넘김. 어차피 변수 생기면 바뀔 거, 너무 세세하게 안 짬", 
+                        value: "P", 
+                        villain: 2 
+                    }
+                ]
+            },
+            // J/P 질문 3
+            {
+                text: "갑자기 기존 계획이 엎어지고 새로운 방향으로 가야 할 것 같다.",
+                type: "JP",
+                options: [
+                    { 
+                        text: "\"아니 갑자기 왜요?\" 일단 납득이 안 됨. 기존 계획대로 가면서 부분 수정하는 게 낫지 않음?", 
+                        value: "J", 
+                        villain: 3 
+                    },
+                    { 
+                        text: "\"변경 사유랑 새 일정 문서로 정리해주세요\" 체계적으로 변경 관리 하자고 함", 
+                        value: "J", 
+                        villain: 2 
+                    },
+                    { 
+                        text: "\"오 그래요? 그럼 이 방향은 어때요?\" 상황 바뀌면 거기 맞춰서 새로운 아이디어 내는 게 재밌음", 
+                        value: "P", 
+                        villain: 1 
+                    },
+                    { 
+                        text: "\"ㅇㅋ 알겠어요~\" 하고 적응함. 어차피 계획은 바뀌라고 있는 거, 유연하게 가면 됨", 
+                        value: "P", 
+                        villain: 1 
+                    }
                 ]
             }
         ];
@@ -943,22 +1097,9 @@
             document.getElementById(screenId).classList.add('active');
         }
 
-        function showMbtiScreen() {
-            showScreen('mbti');
-        }
-
-        function selectMbti(btn) {
-            document.querySelectorAll('.mbti-btn').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-            selectedMbti = btn.textContent;
-            
-            setTimeout(() => {
-                startQuestions();
-            }, 300);
-        }
-
         function startQuestions() {
             currentQuestion = 0;
+            scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
             villainScore = 0;
             showScreen('question');
             showQuestion();
@@ -973,14 +1114,15 @@
             document.getElementById('questionText').textContent = q.text;
             
             const optionsHtml = q.options.map((opt, idx) => 
-                `<button class="option-btn slide-in" style="animation-delay: ${idx * 0.1}s" onclick="selectOption(${opt.score})">${opt.text}</button>`
+                `<button class="option-btn slide-in" style="animation-delay: ${idx * 0.1}s" onclick="selectOption('${opt.value}', ${opt.villain})">${opt.text}</button>`
             ).join('');
             
             document.getElementById('options').innerHTML = optionsHtml;
         }
 
-        function selectOption(score) {
-            villainScore += score;
+        function selectOption(value, villain) {
+            scores[value]++;
+            villainScore += villain;
             currentQuestion++;
             
             if (currentQuestion < questions.length) {
@@ -997,15 +1139,25 @@
             }, 2500);
         }
 
+        function calculateMBTI() {
+            let mbti = '';
+            mbti += scores.E >= scores.I ? 'E' : 'I';
+            mbti += scores.S >= scores.N ? 'S' : 'N';
+            mbti += scores.T >= scores.F ? 'T' : 'F';
+            mbti += scores.J >= scores.P ? 'J' : 'P';
+            return mbti;
+        }
+
         function showResult() {
-            const data = villainData[selectedMbti];
+            const mbti = calculateMBTI();
+            const data = villainData[mbti];
             
-            // Adjust score based on answers
+            // 답변 기반 빌런 점수 조정
             const baseScore = data.score;
-            const answerBonus = Math.round((villainScore / 40) * 20) - 10;
-            const finalScore = Math.min(99, Math.max(20, baseScore + answerBonus));
+            const answerBonus = Math.round((villainScore / 30) * 15) - 8;
+            const finalScore = Math.min(99, Math.max(25, baseScore + answerBonus));
             
-            document.getElementById('resultMbti').textContent = selectedMbti;
+            document.getElementById('resultMbti').textContent = mbti;
             document.getElementById('gaugeValue').textContent = finalScore + '%';
             document.getElementById('villainType').textContent = data.type;
             document.getElementById('villainDesc').innerHTML = data.desc.replace(/\n/g, '<br>');
@@ -1020,18 +1172,18 @@
             
             showScreen('result');
             
-            // Animate gauge
             setTimeout(() => {
                 document.getElementById('gaugeFill').style.width = finalScore + '%';
             }, 300);
         }
 
         function shareResult() {
-            const text = `나의 회사 빌런 유형: ${selectedMbti} - ${villainData[selectedMbti].type}\n\n알고보니 내가 빌런? 테스트 해보기 👇`;
+            const mbti = calculateMBTI();
+            const text = `우리 회사 빌런 없다고 했는데...\n내가 ${mbti} "${villainData[mbti].type}"이었음 ㅋㅋㅋ\n\n너도 테스트 해봐 👇`;
             
             if (navigator.share) {
                 navigator.share({
-                    title: '알고보니 내가 빌런?',
+                    title: '우리 회사는 빌런 없어',
                     text: text,
                     url: window.location.href
                 });
@@ -1042,8 +1194,8 @@
         }
 
         function retry() {
-            selectedMbti = '';
             currentQuestion = 0;
+            scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
             villainScore = 0;
             showScreen('intro');
         }
