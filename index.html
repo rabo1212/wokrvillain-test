@@ -242,6 +242,10 @@
             color: var(--black);
         }
 
+        .option-btn:focus {
+            outline: none;
+        }
+
         /* Loading Screen */
         .loading-screen {
             justify-content: center;
@@ -1121,6 +1125,9 @@
         }
 
         function selectOption(value, villain) {
+            // 현재 포커스된 버튼 blur 처리
+            document.activeElement.blur();
+            
             scores[value]++;
             villainScore += villain;
             currentQuestion++;
